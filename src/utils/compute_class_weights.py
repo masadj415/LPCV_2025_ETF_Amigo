@@ -6,7 +6,12 @@ import dataset.utils as dsutils
 
 
 def get_class_weights(dataloader, recompute = False):
-    # check if file class_weights.txt exists
+    """
+    Computes class weights based on the frequency of each class in the dataset.
+    The weights are saved to a file named 'class_weights.txt' for future use.
+    If the file already exists and recompute is set to False, the weights are loaded from the file.
+    """
+
     if not recompute:
         try:
             with open('class_weights.txt') as f:
@@ -18,23 +23,8 @@ def get_class_weights(dataloader, recompute = False):
 
     if recompute:
         print("Recomputing class weights...")
-        # Define device
+
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        # load datasets
-        
-        # COCOconfig = dsutils.COCOConfig()
-        # COCOconfig.transform = "RESIZE_NORMALIZE"
-        # ImageNetConfig = dsutils.ImagenetConfig()
-        # ImageNetConfig.transform = "RESIZE_NORMALIZE"
-
-        # dataset_coco_train = dsutils.get_coco_dataset(mode = "train", config = COCOconfig)
-        # dataset_imagenet_train = dsutils.get_imagenet_dataset(mode = "train", config = ImageNetConfig)
-        # train_dataset = torch.utils.data.ConcatDataset([dataset_coco_train, dataset_imagenet_train])
-
-        # # Define DataLoaders
-        # batch_size = 64
-        # train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=15,
-        #                         persistent_workers=True, pin_memory=True, prefetch_factor=2)
 
         train_loader = dataloader
 
@@ -59,7 +49,12 @@ def get_class_weights(dataloader, recompute = False):
         return weights
     
 def get_class_dataset_weights(dataloader, recompute = False):
-    # check if file class_dataset_weights.txt exists
+    '''
+    Computes class dataset weights based on the frequency of each class in each of the datasets.
+    The idea is to balance such that each class has the same number of samples across all datasets.
+    The weights are saved to a file named 'class_dataset_weights.txt' for future use.
+    If the file already exists and recompute is set to False, the weights are loaded from the file.
+    '''
     if not recompute:
         try:
             with open('class_dataset_weights.txt') as f:
@@ -78,20 +73,6 @@ def get_class_dataset_weights(dataloader, recompute = False):
 
         print("Recomputing class dataset weights...")
         
-        # COCOconfig = dsutils.COCOConfig()
-        # COCOconfig.transform = "RESIZE_NORMALIZE"
-        # ImageNetConfig = dsutils.ImagenetConfig()
-        # ImageNetConfig.transform = "RESIZE_NORMALIZE"
-
-        # dataset_coco_train = dsutils.get_coco_dataset(mode = "train", config = COCOconfig)
-        # dataset_imagenet_train = dsutils.get_imagenet_dataset(mode = "train", config = ImageNetConfig)
-        # train_dataset = torch.utils.data.ConcatDataset([dataset_coco_train, dataset_imagenet_train])
-
-        # # Define DataLoaders
-        # batch_size = 64
-        # train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=15,
-        #                         persistent_workers=True, pin_memory=True, prefetch_factor=2)
-
         train_loader = dataloader
 
         label_counts = Counter()

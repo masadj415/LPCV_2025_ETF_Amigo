@@ -38,7 +38,6 @@ def process_images(root1, root2, output_root1, output_root2):
             os.makedirs(dest_dir, exist_ok=True)
             shutil.copy(img_path2, os.path.join(dest_dir, image_name))
 
-# Example usage
 root1 = "/home/centar15-jet/LPCV_2025_T1/datasets/coco_modified/train"
 root2 = "/home/centar15-jet/Desktop/zeznuli_sve"
 output_root1 = "/home/centar15-jet/Desktop/comeback/saved"

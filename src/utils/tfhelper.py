@@ -9,20 +9,17 @@ def download_model_from_compile_job(compile_job, download_path):
 
 class TFHelper:
     """ TFHelper
-    
-    Pomocna klasa za rad sa TFLite modelima.
-    Posle compile job-a na qai hub-u model koji dobijemo preko .get_target_model() je 
-    TFLiteModel objekat, koji se moze download-ovati kao .tflite fajl.
-    Ova klasa sluzi za rad sa tim fajlovima, tj. za ucitavanje i pokretanje inference-a.
 
-    Konstruktoru proslediti izlaz funkcije download_model_from_compile_job
-    kojoj se daje compile job objekat i putanja na kojoj ce se sacuvati model.
-    
+    Helper class for working with TFLite models.
+    After a compile job on QAI Hub, the model returned from `.get_target_model()` 
+    is a `TFLiteModel` object, which can be downloaded as a `.tflite` file.
+    This class is used for working with those files — i.e., for loading and running inference.
 
+    Pass the output of `download_model_from_compile_job` to the constructor,
+    which takes a compile job object and a path where the model will be saved.
     """
 
     def __init__(self, model_path):
-
         self.interpreter = tflite.Interpreter(model_path=model_path)
         
     def get_interpreter(self):
@@ -31,10 +28,9 @@ class TFHelper:
     def run_inference(self, input_array):
         """ run_inference
 
-        Pokrene inference na modelu skinutom sa qai hub-a, lokalno
-        Prima numpy array(sliku), vraca numpy array(rezultat inference-a)
-        Rezultati se verovatno nece poklapati sa onima na qaihub-u
-        
+        Runs inference on the model downloaded from QAI Hub, locally.
+        Takes a NumPy array (image) and returns a NumPy array (inference results).
+        The results likely won’t match those from QAI Hub exactly.
         """
         self.interpreter.allocate_tensors()
         input_details = self.interpreter.get_input_details()

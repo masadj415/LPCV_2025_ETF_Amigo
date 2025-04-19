@@ -1,7 +1,3 @@
-# Wrapper za pravljenje prostih jobova za AIHUB, trenutno samo kompajliranje, profiliranje i inferencija
-
-# Probacu ovo da promenim da radi kao compile job
-
 import qai_hub as hub
 import torch
 import numpy as np

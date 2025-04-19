@@ -21,20 +21,23 @@ This repository contains our solution for Track 1 of the LPCV 2025 Challenge, wh
 
 To reproduce our environment and train or evaluate the model, follow these steps:
 
-```bash
-# 1. Create and activate virtual environment
-python -m venv .venv
-source .venv/bin/activate  # For Windows use: .venv\Scripts\activate
+1. **Create and activate virtual environment**  
+   `python -m venv .venv`  
+   `source .venv/bin/activate`  &nbsp;&nbsp;*(For Windows use: `.venv\Scripts\activate`)*
 
-# 2. Install the repo in editable mode
-pip install -e .
+2. **Install the repo in editable mode**  
+   `pip install -e .`
 
-# 3. Install PyTorch and related packages with CUDA support (example for CUDA 12.6)
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
+3. **Install PyTorch and related packages with CUDA support**  
+   *(example for CUDA 12.6)*  
+   `pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126`
 
-# 4. Download the pretrained weights from https://drive.google.com/file/d/1N5Y81Vcyf2ox41TC3wlRBxgQPYaEndTW/view.
+4. **Download the pretrained weights**  
+   from: [Google Drive Link](https://drive.google.com/file/d/1N5Y81Vcyf2ox41TC3wlRBxgQPYaEndTW/view)
 
-# 5. Rename the file to CASVIT_T.pth and put it in the src/casvit folder
+5. **Rename the file to** `CASVIT_T.pth` **and put it in the** `src/casvit` **folder**
 
-# 6. For training, from the root folder run python src/casvit/rcvit.py
+6. **For training, from the root folder run:**  
+   `python src/casvit/rcvit.py`
+
 

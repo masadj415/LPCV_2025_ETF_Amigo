@@ -1,0 +1,60 @@
+{
+    "coco_config_train": {
+        "transform": "AUGMENTATION2"
+    },
+
+    "coco_config_val": {
+        "transform": "RESIZE_NORMALIZE"
+    },
+
+    "imagenet_config_train": {
+        "transform": "AUGMENTATION2"
+    },
+
+    "imagenet_config_val" : {
+        "transform": "RESIZE_NORMALIZE"
+    },
+
+    "SD_config_train":{
+        "transform": "AUGMENTATION2"
+    },
+
+    "SD_config_val":{
+        "transform": "RESIZE_NORMALIZE"
+    },
+
+    "styles_config_train":{
+        "transform": "AUGMENTATION2"
+    },
+
+    "styles_config_val":{
+        "transform": "RESIZE_NORMALIZE"
+    },
+
+    "dataloader_config" : {
+        "batch_size": 256,
+        "shuffle": true,
+        "num_workers": 14,
+        "persistent_workers": true,
+        "pin_memory": true,
+        "prefetch_factor": 3,
+        "drop_last": false
+    },
+
+    "model_configuration": {
+        "model_name": "FINAL_MODEL",
+        "version"   : "1.0"
+    },
+
+    "balance_dataset" : true,
+    "balance_datasets_per_class": true,
+    "label_smoothing" : 0.05,
+    "dataset_weights" : [0.77318, 0.577985, 0.68039, 0.300767],
+    "use_per_class_dataset_weighthing": true,
+    
+    "learning_rate": 2e-6,
+    "weight_decay" : 0.001,
+    "max_epochs": 300,
+    "devices" : 1,
+    "root_dir" : "/home/centar15-desktop1/LPCV_2025_T1"
+}

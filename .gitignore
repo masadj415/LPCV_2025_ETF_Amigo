@@ -1,0 +1,64 @@
+# model files and checkpoints
+*.pt
+*.tflite
+*.pth
+
+models/*
+!models/ovde_treba_stavljati_modele
+datasets/*
+!datasets/ovde_ide_dataset
+!datasets/readme.md
+
+# python cache
+*.ckpt
+*.pth.tar
+
+
+saved_configs/*
+models/*
+!models/ovde_treba_stavljati_modele
+datasets/*
+!datasets/ovde_ide_dataset
+!datasets/readme.md
+
+# python cache
+*__pycache__
+
+# vscode settings
+.vscode
+
+# encoding files for quantization
+*.encodings
+# onnx models, we use them for quantizaton
+*.onnx
+
+# yaml
+*hparams.yaml*
+
+# tensorbaord logs
+*events.out.tfevents*
+*.pt.trace.*
+
+# python venvs
+venv
+.venv310/
+.venv/
+.venv*
+
+# docs
+build/
+source/
+xml/
+
+
+# random
+*.egg-info*
+*_results.json
+src/mobilenet_v3/quantized/
+src/reference_solution/profile_results
+
+*.pkl
+*_results.json
+*.egg-info
+*quantized*
+*profile_results*

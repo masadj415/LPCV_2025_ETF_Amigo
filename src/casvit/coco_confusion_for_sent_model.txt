@@ -1,0 +1,670 @@
+
+=== Detailed Accuracy and Confusion Report ===
+
+[bicycle]
+  ✔ Correct: 284
+  ✘ Wrong: 16
+  📊 Accuracy: 94.67%
+  🔁 Most common confusion with:
+     → motorcycle (6 times)
+     → parking_meter (2 times)
+     → potted_plant (1 times)
+     → kite (1 times)
+     → cow (1 times)
+
+[car]
+  ✔ Correct: 260
+  ✘ Wrong: 19
+  📊 Accuracy: 93.19%
+  🔁 Most common confusion with:
+     → truck (4 times)
+     → train (3 times)
+     → parking_meter (2 times)
+     → bus (2 times)
+     → tv (2 times)
+
+[motorcycle]
+  ✔ Correct: 289
+  ✘ Wrong: 11
+  📊 Accuracy: 96.33%
+  🔁 Most common confusion with:
+     → bicycle (4 times)
+     → car (2 times)
+     → train (1 times)
+     → bench (1 times)
+     → potted_plant (1 times)
+
+[airplane]
+  ✔ Correct: 296
+  ✘ Wrong: 4
+  📊 Accuracy: 98.67%
+  🔁 Most common confusion with:
+     → boat (3 times)
+     → umbrella (1 times)
+
+[bus]
+  ✔ Correct: 255
+  ✘ Wrong: 12
+  📊 Accuracy: 95.51%
+  🔁 Most common confusion with:
+     → car (4 times)
+     → truck (3 times)
+     → horse (2 times)
+     → train (2 times)
+     → backpack (1 times)
+
+[train]
+  ✔ Correct: 286
+  ✘ Wrong: 14
+  📊 Accuracy: 95.33%
+  🔁 Most common confusion with:
+     → bicycle (3 times)
+     → bus (3 times)
+     → truck (3 times)
+     → backpack (1 times)
+     → car (1 times)
+
+[truck]
+  ✔ Correct: 135
+  ✘ Wrong: 18
+  📊 Accuracy: 88.24%
+  🔁 Most common confusion with:
+     → bus (10 times)
+     → car (6 times)
+     → traffic_light (1 times)
+     → airplane (1 times)
+
+[boat]
+  ✔ Correct: 280
+  ✘ Wrong: 20
+  📊 Accuracy: 93.33%
+  🔁 Most common confusion with:
+     → dog (3 times)
+     → bus (3 times)
+     → bench (2 times)
+     → potted_plant (2 times)
+     → train (2 times)
+
+[traffic_light]
+  ✔ Correct: 296
+  ✘ Wrong: 4
+  📊 Accuracy: 98.67%
+  🔁 Most common confusion with:
+     → clock (2 times)
+     → parking_meter (1 times)
+     → tv (1 times)
+
+[stop_sign]
+  ✔ Correct: 291
+  ✘ Wrong: 9
+  📊 Accuracy: 97.00%
+  🔁 Most common confusion with:
+     → traffic_light (7 times)
+     → boat (1 times)
+     → umbrella (1 times)
+
+[parking_meter]
+  ✔ Correct: 288
+  ✘ Wrong: 12
+  📊 Accuracy: 96.00%
+  🔁 Most common confusion with:
+     → car (2 times)
+     → traffic_light (2 times)
+     → motorcycle (1 times)
+     → boat (1 times)
+     → cell_phone (1 times)
+
+[bench]
+  ✔ Correct: 250
+  ✘ Wrong: 50
+  📊 Accuracy: 83.33%
+  🔁 Most common confusion with:
+     → chair (15 times)
+     → dining_table (12 times)
+     → laptop (3 times)
+     → backpack (3 times)
+     → cat (3 times)
+
+[bird]
+  ✔ Correct: 276
+  ✘ Wrong: 24
+  📊 Accuracy: 92.00%
+  🔁 Most common confusion with:
+     → boat (4 times)
+     → potted_plant (3 times)
+     → banana (3 times)
+     → horse (2 times)
+     → teddy_bear (1 times)
+
+[cat]
+  ✔ Correct: 271
+  ✘ Wrong: 29
+  📊 Accuracy: 90.33%
+  🔁 Most common confusion with:
+     → laptop (5 times)
+     → keyboard (4 times)
+     → book (3 times)
+     → tv (3 times)
+     → dog (2 times)
+
+[dog]
+  ✔ Correct: 259
+  ✘ Wrong: 41
+  📊 Accuracy: 86.33%
+  🔁 Most common confusion with:
+     → cat (19 times)
+     → teddy_bear (4 times)
+     → cow (3 times)
+     → horse (3 times)
+     → sheep (2 times)
+
+[horse]
+  ✔ Correct: 289
+  ✘ Wrong: 11
+  📊 Accuracy: 96.33%
+  🔁 Most common confusion with:
+     → cow (4 times)
+     → sheep (2 times)
+     → backpack (2 times)
+     → elephant (1 times)
+     → bicycle (1 times)
+
+[sheep]
+  ✔ Correct: 291
+  ✘ Wrong: 9
+  📊 Accuracy: 97.00%
+  🔁 Most common confusion with:
+     → cow (4 times)
+     → teddy_bear (1 times)
+     → bear (1 times)
+     → kite (1 times)
+     → dog (1 times)
+
+[cow]
+  ✔ Correct: 274
+  ✘ Wrong: 26
+  📊 Accuracy: 91.33%
+  🔁 Most common confusion with:
+     → sheep (9 times)
+     → horse (4 times)
+     → zebra (3 times)
+     → bear (3 times)
+     → elephant (2 times)
+
+[elephant]
+  ✔ Correct: 299
+  ✘ Wrong: 1
+  📊 Accuracy: 99.67%
+  🔁 Most common confusion with:
+     → boat (1 times)
+
+[bear]
+  ✔ Correct: 293
+  ✘ Wrong: 7
+  📊 Accuracy: 97.67%
+  🔁 Most common confusion with:
+     → cat (2 times)
+     → bird (2 times)
+     → cow (1 times)
+     → sheep (1 times)
+     → dog (1 times)
+
+[zebra]
+  ✔ Correct: 300
+  ✘ Wrong: 0
+  📊 Accuracy: 100.00%
+
+[backpack]
+  ✔ Correct: 213
+  ✘ Wrong: 20
+  📊 Accuracy: 91.42%
+  🔁 Most common confusion with:
+     → handbag (17 times)
+     → bicycle (1 times)
+     → chair (1 times)
+     → bench (1 times)
+
+[umbrella]
+  ✔ Correct: 239
+  ✘ Wrong: 6
+  📊 Accuracy: 97.55%
+  🔁 Most common confusion with:
+     → knife (1 times)
+     → spoon (1 times)
+     → sink (1 times)
+     → kite (1 times)
+     → backpack (1 times)
+
+[handbag]
+  ✔ Correct: 185
+  ✘ Wrong: 62
+  📊 Accuracy: 74.90%
+  🔁 Most common confusion with:
+     → backpack (46 times)
+     → tie (2 times)
+     → chair (2 times)
+     → cell_phone (2 times)
+     → couch (2 times)
+
+[tie]
+  ✔ Correct: 278
+  ✘ Wrong: 22
+  📊 Accuracy: 92.67%
+  🔁 Most common confusion with:
+     → bed (4 times)
+     → kite (3 times)
+     → book (2 times)
+     → cat (2 times)
+     → refrigerator (1 times)
+
+[skis]
+  ✔ Correct: 297
+  ✘ Wrong: 3
+  📊 Accuracy: 99.00%
+  🔁 Most common confusion with:
+     → chair (1 times)
+     → backpack (1 times)
+     → knife (1 times)
+
+[sports_ball]
+  ✔ Correct: 279
+  ✘ Wrong: 21
+  📊 Accuracy: 93.00%
+  🔁 Most common confusion with:
+     → orange (5 times)
+     → apple (3 times)
+     → chair (2 times)
+     → bench (1 times)
+     → tennis_racket (1 times)
+
+[kite]
+  ✔ Correct: 278
+  ✘ Wrong: 22
+  📊 Accuracy: 92.67%
+  🔁 Most common confusion with:
+     → umbrella (10 times)
+     → book (3 times)
+     → backpack (2 times)
+     → stop_sign (2 times)
+     → knife (1 times)
+
+[tennis_racket]
+  ✔ Correct: 293
+  ✘ Wrong: 7
+  📊 Accuracy: 97.67%
+  🔁 Most common confusion with:
+     → spoon (1 times)
+     → hair_drier (1 times)
+     → chair (1 times)
+     → bicycle (1 times)
+     → bus (1 times)
+
+[bottle]
+  ✔ Correct: 179
+  ✘ Wrong: 24
+  📊 Accuracy: 88.18%
+  🔁 Most common confusion with:
+     → cup (10 times)
+     → pizza (2 times)
+     → vase (2 times)
+     → refrigerator (2 times)
+     → wine_glass (2 times)
+
+[wine_glass]
+  ✔ Correct: 223
+  ✘ Wrong: 14
+  📊 Accuracy: 94.09%
+  🔁 Most common confusion with:
+     → cup (10 times)
+     → bottle (3 times)
+     → vase (1 times)
+
+[cup]
+  ✔ Correct: 175
+  ✘ Wrong: 35
+  📊 Accuracy: 83.33%
+  🔁 Most common confusion with:
+     → wine_glass (13 times)
+     → bottle (7 times)
+     → bowl (6 times)
+     → vase (4 times)
+     → hot_dog (1 times)
+
+[knife]
+  ✔ Correct: 264
+  ✘ Wrong: 36
+  📊 Accuracy: 88.00%
+  🔁 Most common confusion with:
+     → spoon (8 times)
+     → bowl (5 times)
+     → pizza (4 times)
+     → cell_phone (4 times)
+     → cup (3 times)
+
+[spoon]
+  ✔ Correct: 189
+  ✘ Wrong: 111
+  📊 Accuracy: 63.00%
+  🔁 Most common confusion with:
+     → knife (57 times)
+     → bowl (28 times)
+     → cup (9 times)
+     → oven (2 times)
+     → banana (2 times)
+
+[bowl]
+  ✔ Correct: 254
+  ✘ Wrong: 46
+  📊 Accuracy: 84.67%
+  🔁 Most common confusion with:
+     → cup (14 times)
+     → apple (7 times)
+     → broccoli (5 times)
+     → spoon (4 times)
+     → orange (3 times)
+
+[banana]
+  ✔ Correct: 290
+  ✘ Wrong: 10
+  📊 Accuracy: 96.67%
+  🔁 Most common confusion with:
+     → apple (5 times)
+     → donut (4 times)
+     → spoon (1 times)
+
+[apple]
+  ✔ Correct: 281
+  ✘ Wrong: 19
+  📊 Accuracy: 93.67%
+  🔁 Most common confusion with:
+     → banana (7 times)
+     → orange (6 times)
+     → donut (2 times)
+     → bowl (2 times)
+     → broccoli (1 times)
+
+[orange]
+  ✔ Correct: 266
+  ✘ Wrong: 34
+  📊 Accuracy: 88.67%
+  🔁 Most common confusion with:
+     → apple (23 times)
+     → banana (3 times)
+     → donut (2 times)
+     → bowl (2 times)
+     → broccoli (1 times)
+
+[broccoli]
+  ✔ Correct: 298
+  ✘ Wrong: 2
+  📊 Accuracy: 99.33%
+  🔁 Most common confusion with:
+     → spoon (2 times)
+
+[hot_dog]
+  ✔ Correct: 262
+  ✘ Wrong: 38
+  📊 Accuracy: 87.33%
+  🔁 Most common confusion with:
+     → donut (15 times)
+     → knife (9 times)
+     → pizza (7 times)
+     → apple (2 times)
+     → banana (1 times)
+
+[pizza]
+  ✔ Correct: 291
+  ✘ Wrong: 9
+  📊 Accuracy: 97.00%
+  🔁 Most common confusion with:
+     → dining_table (4 times)
+     → apple (1 times)
+     → bowl (1 times)
+     → chair (1 times)
+     → donut (1 times)
+
+[donut]
+  ✔ Correct: 281
+  ✘ Wrong: 19
+  📊 Accuracy: 93.67%
+  🔁 Most common confusion with:
+     → bowl (6 times)
+     → hot_dog (3 times)
+     → dining_table (2 times)
+     → pizza (1 times)
+     → oven (1 times)
+
+[chair]
+  ✔ Correct: 232
+  ✘ Wrong: 68
+  📊 Accuracy: 77.33%
+  🔁 Most common confusion with:
+     → dining_table (20 times)
+     → couch (15 times)
+     → bench (7 times)
+     → tv (3 times)
+     → backpack (2 times)
+
+[couch]
+  ✔ Correct: 216
+  ✘ Wrong: 84
+  📊 Accuracy: 72.00%
+  🔁 Most common confusion with:
+     → chair (26 times)
+     → bed (17 times)
+     → laptop (5 times)
+     → dining_table (5 times)
+     → teddy_bear (5 times)
+
+[potted_plant]
+  ✔ Correct: 294
+  ✘ Wrong: 26
+  📊 Accuracy: 91.88%
+  🔁 Most common confusion with:
+     → vase (9 times)
+     → cup (2 times)
+     → tv (2 times)
+     → wine_glass (2 times)
+     → couch (1 times)
+
+[bed]
+  ✔ Correct: 248
+  ✘ Wrong: 52
+  📊 Accuracy: 82.67%
+  🔁 Most common confusion with:
+     → couch (24 times)
+     → backpack (4 times)
+     → dining_table (3 times)
+     → bench (3 times)
+     → laptop (3 times)
+
+[dining_table]
+  ✔ Correct: 224
+  ✘ Wrong: 42
+  📊 Accuracy: 84.21%
+  🔁 Most common confusion with:
+     → chair (10 times)
+     → bench (7 times)
+     → couch (4 times)
+     → potted_plant (2 times)
+     → bed (2 times)
+
+[toilet]
+  ✔ Correct: 272
+  ✘ Wrong: 28
+  📊 Accuracy: 90.67%
+  🔁 Most common confusion with:
+     → sink (13 times)
+     → vase (3 times)
+     → refrigerator (2 times)
+     → toaster (2 times)
+     → bottle (1 times)
+
+[tv]
+  ✔ Correct: 283
+  ✘ Wrong: 17
+  📊 Accuracy: 94.33%
+  🔁 Most common confusion with:
+     → microwave (3 times)
+     → book (2 times)
+     → refrigerator (2 times)
+     → oven (2 times)
+     → chair (1 times)
+
+[laptop]
+  ✔ Correct: 235
+  ✘ Wrong: 65
+  📊 Accuracy: 78.33%
+  🔁 Most common confusion with:
+     → tv (21 times)
+     → book (13 times)
+     → keyboard (10 times)
+     → cell_phone (5 times)
+     → chair (3 times)
+
+[mouse]
+  ✔ Correct: 282
+  ✘ Wrong: 18
+  📊 Accuracy: 94.00%
+  🔁 Most common confusion with:
+     → cell_phone (7 times)
+     → remote (3 times)
+     → elephant (1 times)
+     → laptop (1 times)
+     → bowl (1 times)
+
+[remote]
+  ✔ Correct: 275
+  ✘ Wrong: 25
+  📊 Accuracy: 91.67%
+  🔁 Most common confusion with:
+     → cell_phone (18 times)
+     → book (2 times)
+     → boat (1 times)
+     → mouse (1 times)
+     → clock (1 times)
+
+[keyboard]
+  ✔ Correct: 279
+  ✘ Wrong: 21
+  📊 Accuracy: 93.00%
+  🔁 Most common confusion with:
+     → laptop (10 times)
+     → remote (4 times)
+     → cell_phone (4 times)
+     → tv (1 times)
+     → mouse (1 times)
+
+[cell_phone]
+  ✔ Correct: 289
+  ✘ Wrong: 11
+  📊 Accuracy: 96.33%
+  🔁 Most common confusion with:
+     → remote (4 times)
+     → handbag (2 times)
+     → tv (2 times)
+     → knife (1 times)
+     → laptop (1 times)
+
+[microwave]
+  ✔ Correct: 276
+  ✘ Wrong: 24
+  📊 Accuracy: 92.00%
+  🔁 Most common confusion with:
+     → tv (7 times)
+     → oven (7 times)
+     → toaster (2 times)
+     → cell_phone (1 times)
+     → sink (1 times)
+
+[oven]
+  ✔ Correct: 264
+  ✘ Wrong: 36
+  📊 Accuracy: 88.00%
+  🔁 Most common confusion with:
+     → microwave (18 times)
+     → refrigerator (8 times)
+     → sink (2 times)
+     → cup (2 times)
+     → tv (2 times)
+
+[toaster]
+  ✔ Correct: 21
+  ✘ Wrong: 0
+  📊 Accuracy: 100.00%
+
+[sink]
+  ✔ Correct: 278
+  ✘ Wrong: 22
+  📊 Accuracy: 92.67%
+  🔁 Most common confusion with:
+     → toilet (9 times)
+     → bowl (7 times)
+     → oven (2 times)
+     → dining_table (1 times)
+     → microwave (1 times)
+
+[refrigerator]
+  ✔ Correct: 292
+  ✘ Wrong: 24
+  📊 Accuracy: 92.41%
+  🔁 Most common confusion with:
+     → oven (9 times)
+     → microwave (4 times)
+     → bottle (2 times)
+     → tv (2 times)
+     → book (2 times)
+
+[book]
+  ✔ Correct: 280
+  ✘ Wrong: 20
+  📊 Accuracy: 93.33%
+  🔁 Most common confusion with:
+     → chair (3 times)
+     → cell_phone (3 times)
+     → tie (2 times)
+     → teddy_bear (2 times)
+     → cup (2 times)
+
+[clock]
+  ✔ Correct: 296
+  ✘ Wrong: 4
+  📊 Accuracy: 98.67%
+  🔁 Most common confusion with:
+     → cell_phone (1 times)
+     → microwave (1 times)
+     → bowl (1 times)
+     → traffic_light (1 times)
+
+[vase]
+  ✔ Correct: 255
+  ✘ Wrong: 42
+  📊 Accuracy: 85.86%
+  🔁 Most common confusion with:
+     → potted_plant (13 times)
+     → bowl (6 times)
+     → cup (6 times)
+     → wine_glass (5 times)
+     → bottle (5 times)
+
+[teddy_bear]
+  ✔ Correct: 288
+  ✘ Wrong: 12
+  📊 Accuracy: 96.00%
+  🔁 Most common confusion with:
+     → donut (2 times)
+     → bottle (2 times)
+     → handbag (1 times)
+     → boat (1 times)
+     → dog (1 times)
+
+[hair_drier]
+  ✔ Correct: 29
+  ✘ Wrong: 4
+  📊 Accuracy: 87.88%
+  🔁 Most common confusion with:
+     → knife (1 times)
+     → cup (1 times)
+     → mouse (1 times)
+     → airplane (1 times)
+

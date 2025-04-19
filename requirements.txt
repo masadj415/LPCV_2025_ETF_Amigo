@@ -1,0 +1,42 @@
+aimet-torch==2.0.0
+decorator==5.2.1
+einops==0.8.1
+gdown==5.2.0
+huggingface-hub==0.29.1
+ipykernel==6.29.5
+ipython==8.32.0
+jupyter_client==8.6.3
+jupyter_core==5.7.2
+keras==3.8.0
+lightning==2.5.0.post0
+lightning-utilities==0.12.0
+matplotlib==3.10.0
+matplotlib-inline==0.1.7
+numpy==1.26.4
+onnx==1.17.0
+pydantic==2.10.6
+qai-hub==0.24.0
+scikit-image==0.25.2
+scipy==1.15.2
+tensorboard==2.18.0
+tensorflow==2.18.0
+tensorboard-data-server==0.7.2
+timm==1.0.15
+torchviz==0.0.3
+torchmetrics==1.6.1
+transformers==4.49.0
+kornia
+
+torchsummary==1.5.1
+
+
+
+# generating the docs
+sphinx 
+# breathe 
+sphinx-rtd-theme 
+myst-parser
+
+
+# new
+pydantic

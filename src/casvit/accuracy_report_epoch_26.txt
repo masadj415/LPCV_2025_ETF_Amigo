@@ -1,0 +1,386 @@
+=== Detailed Accuracy Report (Sorted by Average Accuracy) ===
+
+[couch]
+  ✅ ImageNet: 90.97%
+  ✅ COCO: 67.33%
+  ✅ Diffusion: 100.00%
+  📊 Average: 86.10%
+
+[spoon]
+  ✅ ImageNet: 96.89%
+  ✅ COCO: 68.00%
+  ✅ Diffusion: 100.00%
+  📊 Average: 88.30%
+
+[vase]
+  ✅ ImageNet: 87.00%
+  ✅ COCO: 84.85%
+  ✅ Diffusion: 94.74%
+  📊 Average: 88.86%
+
+[truck]
+  ✅ ImageNet: 82.33%
+  ✅ COCO: 88.24%
+  ✅ Diffusion: 98.20%
+  📊 Average: 89.59%
+
+[laptop]
+  ✅ ImageNet: 94.44%
+  ✅ COCO: 76.00%
+  ✅ Diffusion: 100.00%
+  📊 Average: 90.15%
+
+[bed]
+  ✅ ImageNet: 95.81%
+  ✅ COCO: 82.67%
+  ✅ Diffusion: 94.12%
+  📊 Average: 90.86%
+
+[cup]
+  ✅ ImageNet: 90.50%
+  ✅ COCO: 83.81%
+  ✅ Diffusion: 98.47%
+  📊 Average: 90.93%
+
+[bowl]
+  ✅ ImageNet: 94.02%
+  ✅ COCO: 85.00%
+  ✅ Diffusion: 96.00%
+  📊 Average: 91.67%
+
+[chair]
+  ✅ ImageNet: 95.50%
+  ✅ COCO: 87.00%
+  ✅ Diffusion: 93.37%
+  📊 Average: 91.96%
+
+[handbag]
+  ✅ ImageNet: 96.99%
+  ✅ COCO: 79.76%
+  ✅ Diffusion: 100.00%
+  📊 Average: 92.25%
+
+[dining_table]
+  ✅ ImageNet: 97.32%
+  ✅ COCO: 81.20%
+  ✅ Diffusion: 99.35%
+  📊 Average: 92.63%
+
+[remote]
+  ✅ ImageNet: 93.58%
+  ✅ COCO: 91.67%
+  ✅ Diffusion: 93.44%
+  📊 Average: 92.90%
+
+[backpack]
+  ✅ ImageNet: 88.42%
+  ✅ COCO: 91.85%
+  ✅ Diffusion: 98.97%
+  📊 Average: 93.08%
+
+[knife]
+  ✅ ImageNet: 94.67%
+  ✅ COCO: 86.67%
+  ✅ Diffusion: 97.98%
+  📊 Average: 93.10%
+
+[microwave]
+  ✅ ImageNet: 91.67%
+  ✅ COCO: 92.00%
+  ✅ Diffusion: 96.48%
+  📊 Average: 93.38%
+
+[dog]
+  ✅ ImageNet: 98.17%
+  ✅ COCO: 86.00%
+  ✅ Diffusion: 97.04%
+  📊 Average: 93.73%
+
+[mouse]
+  ✅ ImageNet: 86.00%
+  ✅ COCO: 95.67%
+  ✅ Diffusion: 100.00%
+  📊 Average: 93.89%
+
+[car]
+  ✅ ImageNet: 96.99%
+  ✅ COCO: 94.62%
+  ✅ Diffusion: 91.22%
+  📊 Average: 94.28%
+
+[oven]
+  ✅ ImageNet: 95.67%
+  ✅ COCO: 88.67%
+  ✅ Diffusion: 98.67%
+  📊 Average: 94.33%
+
+[bench]
+  ✅ ImageNet: 97.62%
+  ✅ COCO: 86.00%
+  ✅ Diffusion: 100.00%
+  📊 Average: 94.54%
+
+[bottle]
+  ✅ ImageNet: 94.77%
+  ✅ COCO: 91.13%
+  ✅ Diffusion: 97.93%
+  📊 Average: 94.61%
+
+[orange]
+  ✅ ImageNet: 93.67%
+  ✅ COCO: 90.33%
+  ✅ Diffusion: 100.00%
+  📊 Average: 94.67%
+
+[hot_dog]
+  ✅ ImageNet: 96.95%
+  ✅ COCO: 87.67%
+  ✅ Diffusion: 100.00%
+  📊 Average: 94.87%
+
+[cow]
+  ✅ ImageNet: 92.98%
+  ✅ COCO: 92.00%
+  ✅ Diffusion: 100.00%
+  📊 Average: 94.99%
+
+[apple]
+  ✅ ImageNet: 98.25%
+  ✅ COCO: 91.33%
+  ✅ Diffusion: 96.30%
+  📊 Average: 95.29%
+
+[toilet]
+  ✅ ImageNet: 95.67%
+  ✅ COCO: 91.33%
+  ✅ Diffusion: 100.00%
+  📊 Average: 95.67%
+
+[donut]
+  ✅ ImageNet: 91.97%
+  ✅ COCO: 95.33%
+  ✅ Diffusion: 100.00%
+  📊 Average: 95.77%
+
+[hair_drier]
+  ✅ ImageNet: 96.54%
+  ✅ COCO: 90.91%
+  ✅ Diffusion: 100.00%
+  📊 Average: 95.82%
+
+[sink]
+  ✅ ImageNet: 96.32%
+  ✅ COCO: 92.33%
+  ✅ Diffusion: 98.81%
+  📊 Average: 95.82%
+
+[wine_glass]
+  ✅ ImageNet: 92.33%
+  ✅ COCO: 95.36%
+  ✅ Diffusion: 100.00%
+  📊 Average: 95.90%
+
+[cat]
+  ✅ ImageNet: 98.33%
+  ✅ COCO: 91.00%
+  ✅ Diffusion: 98.47%
+  📊 Average: 95.93%
+
+[tie]
+  ✅ ImageNet: 95.67%
+  ✅ COCO: 92.67%
+  ✅ Diffusion: 100.00%
+  📊 Average: 96.11%
+
+[cell_phone]
+  ✅ ImageNet: 96.27%
+  ✅ COCO: 96.67%
+  ✅ Diffusion: 96.00%
+  📊 Average: 96.31%
+
+[refrigerator]
+  ✅ ImageNet: 95.62%
+  ✅ COCO: 93.35%
+  ✅ Diffusion: 100.00%
+  📊 Average: 96.33%
+
+[potted_plant]
+  ✅ ImageNet: 99.00%
+  ✅ COCO: 92.19%
+  ✅ Diffusion: 97.92%
+  📊 Average: 96.37%
+
+[book]
+  ✅ ImageNet: 96.27%
+  ✅ COCO: 94.00%
+  ✅ Diffusion: 99.08%
+  📊 Average: 96.45%
+
+[keyboard]
+  ✅ ImageNet: 96.23%
+  ✅ COCO: 93.33%
+  ✅ Diffusion: 100.00%
+  📊 Average: 96.52%
+
+[umbrella]
+  ✅ ImageNet: 93.00%
+  ✅ COCO: 97.14%
+  ✅ Diffusion: 100.00%
+  📊 Average: 96.71%
+
+[toaster]
+  ✅ ImageNet: 90.33%
+  ✅ COCO: 100.00%
+  ✅ Diffusion: 100.00%
+  📊 Average: 96.78%
+
+[bus]
+  ✅ ImageNet: 98.50%
+  ✅ COCO: 94.38%
+  ✅ Diffusion: 97.46%
+  📊 Average: 96.78%
+
+[bird]
+  ✅ ImageNet: 99.00%
+  ✅ COCO: 91.67%
+  ✅ Diffusion: 100.00%
+  📊 Average: 96.89%
+
+[kite]
+  ✅ ImageNet: 98.67%
+  ✅ COCO: 92.00%
+  ✅ Diffusion: 100.00%
+  📊 Average: 96.89%
+
+[boat]
+  ✅ ImageNet: 99.50%
+  ✅ COCO: 92.00%
+  ✅ Diffusion: 99.26%
+  📊 Average: 96.92%
+
+[bicycle]
+  ✅ ImageNet: 97.40%
+  ✅ COCO: 94.00%
+  ✅ Diffusion: 99.44%
+  📊 Average: 96.95%
+
+[parking_meter]
+  ✅ ImageNet: 95.99%
+  ✅ COCO: 96.00%
+  ✅ Diffusion: 99.35%
+  📊 Average: 97.11%
+
+[pizza]
+  ✅ ImageNet: 98.33%
+  ✅ COCO: 95.00%
+  ✅ Diffusion: 98.47%
+  📊 Average: 97.27%
+
+[banana]
+  ✅ ImageNet: 98.05%
+  ✅ COCO: 97.33%
+  ✅ Diffusion: 96.55%
+  📊 Average: 97.31%
+
+[sports_ball]
+  ✅ ImageNet: 98.50%
+  ✅ COCO: 93.67%
+  ✅ Diffusion: 100.00%
+  📊 Average: 97.39%
+
+[tv]
+  ✅ ImageNet: 97.38%
+  ✅ COCO: 95.67%
+  ✅ Diffusion: 99.49%
+  📊 Average: 97.51%
+
+[train]
+  ✅ ImageNet: 98.83%
+  ✅ COCO: 94.67%
+  ✅ Diffusion: 99.45%
+  📊 Average: 97.65%
+
+[tennis_racket]
+  ✅ ImageNet: 95.67%
+  ✅ COCO: 97.33%
+  ✅ Diffusion: 100.00%
+  📊 Average: 97.67%
+
+[traffic_light]
+  ✅ ImageNet: 95.33%
+  ✅ COCO: 99.00%
+  ✅ Diffusion: 99.13%
+  📊 Average: 97.82%
+
+[motorcycle]
+  ✅ ImageNet: 98.28%
+  ✅ COCO: 96.33%
+  ✅ Diffusion: 99.37%
+  📊 Average: 97.99%
+
+[skis]
+  ✅ ImageNet: 96.67%
+  ✅ COCO: 99.00%
+  ✅ Diffusion: 98.61%
+  📊 Average: 98.09%
+
+[clock]
+  ✅ ImageNet: 96.33%
+  ✅ COCO: 99.33%
+  ✅ Diffusion: 99.39%
+  📊 Average: 98.35%
+
+[teddy_bear]
+  ✅ ImageNet: 98.67%
+  ✅ COCO: 96.67%
+  ✅ Diffusion: 100.00%
+  📊 Average: 98.44%
+
+[broccoli]
+  ✅ ImageNet: 96.88%
+  ✅ COCO: 99.33%
+  ✅ Diffusion: 99.19%
+  📊 Average: 98.47%
+
+[sheep]
+  ✅ ImageNet: 98.69%
+  ✅ COCO: 97.00%
+  ✅ Diffusion: 100.00%
+  📊 Average: 98.56%
+
+[bear]
+  ✅ ImageNet: 98.67%
+  ✅ COCO: 98.00%
+  ✅ Diffusion: 99.40%
+  📊 Average: 98.69%
+
+[airplane]
+  ✅ ImageNet: 97.67%
+  ✅ COCO: 98.67%
+  ✅ Diffusion: 100.00%
+  📊 Average: 98.78%
+
+[horse]
+  ✅ ImageNet: 100.00%
+  ✅ COCO: 97.00%
+  ✅ Diffusion: 100.00%
+  📊 Average: 99.00%
+
+[stop_sign]
+  ✅ ImageNet: 100.00%
+  ✅ COCO: 98.00%
+  ✅ Diffusion: 100.00%
+  📊 Average: 99.33%
+
+[elephant]
+  ✅ ImageNet: 99.33%
+  ✅ COCO: 99.33%
+  ✅ Diffusion: 100.00%
+  📊 Average: 99.56%
+
+[zebra]
+  ✅ ImageNet: 99.00%
+  ✅ COCO: 100.00%
+  ✅ Diffusion: 100.00%
+  📊 Average: 99.67%
+

@@ -4,7 +4,6 @@
 
 import qai_hub as hub
 import torch
-import utils.input_getter as input_getter
 import numpy as np
 import copy
 import requests
@@ -180,34 +179,6 @@ def compile_profile_job(model, name = None, input_shape = (1, 3, 224, 224)):
 
     return compile_job_object, profile_job_object
 
-def compile_profile_inference(model: torch.nn.Module, input_getter: input_getter.input_getter):
-    """
-    compile_profile_inference
-
-    Performs compile, profile, and inference in a single function.
-    Uses an input_getter, which is now somewhat deprecated.
-
-    Parameters
-    ----------
-    model : torch.nn.Module
-        The model to be compiled, profiled, and used for inference
-
-    input_getter : input_getter.input_getter
-        Object that provides input tensors in both NumPy and Torch formats
-
-    Returns
-    -------
-    tuple(hub.CompileJob, hub.ProfileJob, hub.InferenceJob)
-        Returns CompileJob, ProfileJob, and InferenceJob objects
-    """
-    input_shape = input_getter.get_input_numpy().shape
-    traced_model = torch.jit.trace(model, input_getter.get_input_torch())
-    compile_job_object = compile_job(traced_model, input_shape)
-    qai_model = compile_job_object.get_target_model()
-    profile_job_object = profile_job(qai_model)
-    inference_job_object = inference_job(qai_model, input_getter.get_input_numpy())
-
-    return compile_job_object, profile_job_object, inference_job_object
 
 def compile_profile_inference_tensor(model: torch.nn.Module, input):
     """

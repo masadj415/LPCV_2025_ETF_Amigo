@@ -7,12 +7,6 @@ def load_weights(filepath):
     weights = [np.float32(x) for x in weights_str]
     return weights
 
-
-
-
 if __name__ == '__main__':
     weights = load_weights('class_weights.txt')
     print(weights)
-
-
-

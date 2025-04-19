@@ -58,11 +58,16 @@ class LightningModel(pl.LightningModule):
         ds = ds.to(self.device)
 
         if(self.per_class_dataset_weights):
+            # If per class dataset weights are used, multiply the loss by the class weights for the specific dataset and the specific class
+
             loss = loss*CLASS_MATRIX[labels, ds]
         else:
+            # If not, just multiply the loss by the dataset weights
+            # This is the same as multiplying by the class weights for all classes in the dataset
             loss = loss*self.dataset_weights[ds]
 
         if self.table is not None:
+            # Apply the balancing for each class and each dataset
             loss = loss*self.table[labels, ds]
         
         loss = loss.mean()

@@ -51,7 +51,7 @@ def get_class_weights(dataloader, recompute = False):
 def get_class_dataset_weights(dataloader, recompute = False):
     '''
     Computes class dataset weights based on the frequency of each class in each of the datasets.
-    The idea is to balance such that each class has the same number of samples across all datasets.
+    The idea is to balance to get an effect as if every class had the same number of samples in each of the datasets.
     The weights are saved to a file named 'class_dataset_weights.txt' for future use.
     If the file already exists and recompute is set to False, the weights are loaded from the file.
     '''

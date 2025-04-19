@@ -13,41 +13,39 @@ import utils.helper as helper
 
 
 def compile_job(model, name : str = None, input_shape = (1, 3, 224, 224)):
-    """ compile_job
-    
-    Pravi job za kompajliranje modela na AIHUBU
-    prost wrapper
+    """
+    compile_job
 
-    NOTE: treba dodati mejlove koji dele podatke kad se pokrene
-    
+    Creates a compile job on the QAI Hub.
+    This function takes in a model and submits it to the QAI Hub for compilation.
+    It can handle different types of models, including traced models and AIMET quantized models.
+    It also allows for the specification of the input shape and the name of the model.
+
     Parameters
     ----------
+    model : torch.jit.ScriptModule or torch.nn.Module or str
+        1. A traced model (torch.jit.ScriptModule)
+        2. A regular PyTorch model (torch.nn.Module), which will be traced inside this function
+        3. A string ending in ".aimet"
+        This is the path to a folder where an AIMET quantized model is saved
+        (e.g., "model.aimet"). It should contain "model.onnx" and "model.encodings".
 
-    model : torch.jit.ScriptModule or torch.nn or str
-        
-        1. vec trace-ovan model (torch.jit.ScriptModule)
-        2. obican torch model (torch.nn) koji se onda trace-uje u ovoj fn
-        3. string koji se zavrsava sa ".aimet"
-            to je putanja do foldera gde je sacuvan aimet kvantizovan model 
-            (npr. "model.aimet"), u njemu treba da postoji npr. "model.onnx" i "model.encodings".
-
-            - ako ne radi proslediti absolute path
+        - If it doesn't work, try passing an absolute path.
 
     name : str
-        Ime modela, ovo ce da pise na qai hubu
-        Ako je None, qai hub generise neko ime (bude ime klase)
+        Name of the model, will be displayed on QAI Hub.
+        If None, QAI Hub will generate a name (usually the class name).
 
     input_shape : tuple
-        oblik ulazne slike, npr. (1, 3, 224, 224)
+        Shape of the input image, e.g., (1, 3, 224, 224)
 
     Returns
     -------
-
     compile_job : hub.client.CompileJob
-        Objekat koji vraca compilejob na qaihubu, u njemu je target model
-    
+        The CompileJob object returned from QAI Hub, which contains the target model
     """
 
+    
     # aimet model
     if type(model) == str:
         name = name + " quantized"
@@ -79,29 +77,28 @@ def compile_job(model, name : str = None, input_shape = (1, 3, 224, 224)):
     return compile_job
 
 def profile_job(compile_job: hub.CompileJob, name : str = None):
-    """ profile_job
+    """
+    profile_job
 
-    Wrapper, salje profile job na qaihub
-    prima compile job object vraca profile job object
+    Wrapper that sends a profile job to QAI Hub.
+    Takes a compile job object and returns a profile job object.
 
     Parameters
     ----------
-    
     compile_job : hub.CompileJob
-        Objekat koji vraca compilejob na qaihubu, u njemu je target model
+        The CompileJob object returned from QAI Hub, containing the target model
 
     name : str
-        Ime profile joba, ovo ce da pise na qaihubu
-        Ako je None, generise se samo
+        Name of the profile job, will be displayed on QAI Hub.
+        If None, a name will be auto-generated.
 
     Returns
     -------
-
     profile_job : hub.ProfileJob
-        Objekat koji vraca profile job na qaihubu, u njemu su vreme izvrsavanja, 
-        i podaci o modelu generalno
-    
+        The ProfileJob object returned from QAI Hub, which includes execution times
+        and general model info
     """
+
 
     model = compile_job.get_target_model()
 
@@ -114,27 +111,26 @@ def profile_job(compile_job: hub.CompileJob, name : str = None):
     return profile_job
     
 def inference_job(compile_job: hub.CompileJob, input_array : np.ndarray):
-    """ inference_job
+    """
+    inference_job
 
-    Wrapper, salje inference job na qaihub
-    Prima compilejob objekat i sliku na kojoj radi inference, vraca inf job obj.
+    Wrapper that sends an inference job to QAI Hub.
+    Takes a compile job object and an input image for inference, and returns the inference job object.
 
     Parameters
     ----------
-
     compile_job : hub.CompileJob
-        Objekat koji vraca compilejob na qaihubu, u njemu je target model
-        
+        The CompileJob object returned from QAI Hub, containing the target model
+
     input_array : np.ndarray
-        Slika na kojoj se radi inference, numpy array
+        The image to be used for inference, as a NumPy array
 
     Returns
     -------
-
     inference_job : hub.InferenceJob
-        Objekat koji vraca inference job na qaihubu, u njemu su rezultati inference-a
-    
+        The InferenceJob object returned from QAI Hub, containing inference results
     """
+
     model = compile_job.get_target_model()
 
     inference_job = hub.submit_inference_job(
@@ -145,39 +141,38 @@ def inference_job(compile_job: hub.CompileJob, input_array : np.ndarray):
     return inference_job
 
 def compile_profile_job(model, name = None, input_shape = (1, 3, 224, 224)):
-    """ compile_profile_job
+    """
+    compile_profile_job
 
-    Radi compile job i profile job u jednoj funkciji,
-    pogledati funkcije compile_job() i profile_job()
+    Performs both compile and profile jobs in one function.
+    See the functions compile_job() and profile_job() for details.
 
     Parameters
     ----------
+    model : torch.jit.ScriptModule or torch.nn.Module or str
+        The model passed to compile_job()
 
-    model : torch.jit.ScriptModule or torch.nn or str
-        model parametar koji se prosledjuje compile_job() funkciji
+        1. A traced model (torch.jit.ScriptModule)
+        2. A regular PyTorch model (torch.nn.Module), which will be traced in this function
+        3. A string ending in ".aimet"
+        This is the path to a folder where an AIMET quantized model is saved
+        (e.g., "model.aimet"). It should contain "model.onnx" and "model.encodings".
 
-        1. vec trace-ovan model (torch.jit.ScriptModule)
-        2. obican torch model (torch.nn) koji se onda trace-uje u ovoj fn
-        3. string koji se zavrsava sa ".aimet"
-            to je putanja do foldera gde je sacuvan aimet kvantizovan model 
-            (npr. "model.aimet"), u njemu treba da postoji npr. "model.onnx" i "model.encodings".
-
-            - ako ne radi proslediti absolute path
+        - If it doesn't work, try passing an absolute path.
 
     name : str
-        Ime modela, ovo ce da pise na qai hubu
-        Ako je None, qai hub generise neko ime (bude ime klase)
+        Name of the model, will be displayed on QAI Hub.
+        If None, QAI Hub will generate a name (usually the class name)
 
     input_shape : tuple
-        oblik ulazne slike, npr. (1, 3, 224, 224)
-    
+        Shape of the input image, e.g., (1, 3, 224, 224)
+
     Returns
     -------
-
     tuple(hub.CompileJob, hub.ProfileJob)
-        Vraca compile job i profile job objekte
-        
+        Returns the CompileJob and ProfileJob objects
     """
+
    
     compile_job_object = compile_job(model, name, input_shape)
     profile_job_object = profile_job(compile_job_object, name)
@@ -186,10 +181,24 @@ def compile_profile_job(model, name = None, input_shape = (1, 3, 224, 224)):
     return compile_job_object, profile_job_object
 
 def compile_profile_inference(model: torch.nn.Module, input_getter: input_getter.input_getter):
-    """ compile_profile_inference
+    """
+    compile_profile_inference
 
-    Treba da uradi sva 3 u jednoj funkciji, koristi input_getter koji je sad malo deprecated
+    Performs compile, profile, and inference in a single function.
+    Uses an input_getter, which is now somewhat deprecated.
 
+    Parameters
+    ----------
+    model : torch.nn.Module
+        The model to be compiled, profiled, and used for inference
+
+    input_getter : input_getter.input_getter
+        Object that provides input tensors in both NumPy and Torch formats
+
+    Returns
+    -------
+    tuple(hub.CompileJob, hub.ProfileJob, hub.InferenceJob)
+        Returns CompileJob, ProfileJob, and InferenceJob objects
     """
     input_shape = input_getter.get_input_numpy().shape
     traced_model = torch.jit.trace(model, input_getter.get_input_torch())
@@ -201,26 +210,24 @@ def compile_profile_inference(model: torch.nn.Module, input_getter: input_getter
     return compile_job_object, profile_job_object, inference_job_object
 
 def compile_profile_inference_tensor(model: torch.nn.Module, input):
-    """ compile_profile_inference_tensor
+    """
+    compile_profile_inference_tensor
 
-    Radi compile prile i inference job ali ne koristi input_getter nego prima 
-    input koji je torch tensor
+    Performs compile, profile, and inference jobs using a provided torch tensor input
+    (instead of input_getter).
 
     Parameters
     ----------
-
     model : torch.nn.Module
-        Model koji se koristi za sve ove jobove
-    
+        The model to be used for all three jobs
+
     input : torch.Tensor 
-        Tenzor (slika) koji se koristi za inference
-    
+        Tensor (image) used for inference
+
     Returns
     -------
-
     tuple(hub.CompileJob, hub.ProfileJob, hub.InferenceJob)
-        Vraca compile job, profile job i inference job objekte
-
+        Returns CompileJob, ProfileJob, and InferenceJob objects
     """
 
     input_shape = input.cpu().numpy().shape

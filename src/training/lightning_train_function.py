@@ -90,7 +90,9 @@ def lightning_train(config_file_path , pytorch_model):
 
 
 
-    # Load training datasets
+    #--------------------------
+    # Training Dataset
+    #--------------------------
 
     train_datasets = []
 
@@ -183,7 +185,6 @@ def lightning_train(config_file_path , pytorch_model):
 
     dir_extension = model_name + "/" + "Ver" + model_version
 
-    # Define model checkpoint callback
     checkpoint_callback= ModelCheckpoint(
         dirpath="models/" + dir_extension,
         filename= model_name + "-{epoch:02d}-{train_loss:.4f}-{val_loss:.4f}",
@@ -198,34 +199,29 @@ def lightning_train(config_file_path , pytorch_model):
                             schedule=torch.profiler.schedule(skip_first=10, warmup=1, wait=1, active=20)
                             )
 
-    # Define callback to save training config
     save_config_callback = SaveConfigCallback(
         config=training_parameters,
         model_name=model_name,
         file_name="training_config.json"
     )
 
-    # Initialize model
     model = get_lightning_model(
         pytorch_model, 
         config_file_path,
         dataloader = train_loader
     )
 
-    # Initialize Trainer with both training and validation loaders
     trainer = Trainer(
         profiler=profiler,
         max_epochs=training_config.max_epochs,
-        devices= "auto",  # Use only one GPU or CPU
+        devices= "auto",
         accelerator="auto",
-        strategy="auto",  # Allows later multi-GPU setup without changing code
+        strategy="auto",
         precision="16-mixed",
         callbacks=[checkpoint_callback, save_config_callback],
         logger=logger,
-        # overfit_batches=10,
     )
 
     print(trainer.device_ids)
-
 
     trainer.fit(model, train_dataloaders=train_loader, val_dataloaders=val_loader)

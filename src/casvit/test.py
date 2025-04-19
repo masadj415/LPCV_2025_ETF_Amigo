@@ -12,7 +12,7 @@ sys.path.append(ROOT_DIR)
 ROOT_DIR = os.path.abspath(os.path.join(os.getcwd(), "../.."))
 sys.path.append(ROOT_DIR)
 
-from utils import helper, input_getter, qai_hub_jobs, tfhelper
+from utils import helper, qai_hub_jobs, tfhelper
 import training
 import casvit.rcvit as rcvit
 
@@ -29,7 +29,7 @@ import training.lightning_train_function
 modelBase = getBaseModel()
 
 lightningModel = training.lightning_model.LightningModel.load_from_checkpoint(
-    r"../../finalLightningCheckpoint/FINAL_MODEL-epoch=54-train_loss=0.6094-val_loss=0.8717.ckpt",
+    r"finalLightningCheckpoint/FINAL_MODEL-epoch=54-train_loss=0.6094-val_loss=0.8717.ckpt",
     model=modelBase
 )
 

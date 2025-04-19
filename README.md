@@ -1,0 +1,1 @@
+# LPCV_2025_ETF_Amigo

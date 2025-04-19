@@ -15,7 +15,7 @@ This repository contains our solution for Track 1 of the LPCV 2025 Challenge, wh
 
 - **Framework**: PyTorch 
 - **Checkpoint**: `FINAL_MODEL-epoch=54-train_loss=0.6094-val_loss=0.8717.ckpt`
-- **Dataset Focus**: We placed strong emphasis on data quality and diversity. We created:
+- **Dataset Focus**: We created:
   - A custom **COCO** variant
   - A filtered **ImageNet-1K** subset
   - A synthetic set using **Stable Diffusion**

@@ -1,5 +1,37 @@
 """
-Code for CAS-ViT
+# -----------------------------------------------------------------------------
+#  CAS‑ViT implementation – MIT‑licensed component inside an Apache‑2.0 project
+#
+#  Based on: https://github.com/Tianfang-Zhang/CAS-ViT
+#  Copyright © 2024–2025 Tianfang Zhang, Lei Li, Yang Zhou, Wentao Liu, Chen Qian & Xiangyang Ji
+#
+#  THIS FILE REMAINS UNDER THE MIT LICENSE (full text below).  
+#  All other files in this repository are distributed under the Apache License
+#  2.0 unless stated otherwise.  See the root‑level LICENSE and NOTICE files
+#  for complete licensing and attribution information.
+# -----------------------------------------------------------------------------
+#
+#  MIT License
+#
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the “Software”), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in
+#  all copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+#  THE SOFTWARE.
+# -----------------------------------------------------------------------------
+
 """
 
 from PIL import ImageFile
@@ -246,39 +278,6 @@ class RCViT(nn.Module):
             if isinstance(m, nn.Linear) and m.bias is not None:
                 nn.init.constant_(m.bias, 0)
 
-    # init for mmdetection or mmsegmentation by loading
-    # imagenet pre-trained weights
-    def init_weights(self, pretrained=None):
-        # logger = get_root_logger()
-        # if self.init_cfg is None and pretrained is None:
-        #     logger.warn(f'No pre-trained weights for '
-        #                 f'{self.__class__.__name__}, '
-        #                 f'training start from scratch')
-        #     pass
-        # else:
-        #     assert 'checkpoint' in self.init_cfg, f'Only support ' \
-        #                                           f'specify `Pretrained` in ' \
-        #                                           f'`init_cfg` in ' \
-        #                                           f'{self.__class__.__name__} '
-        #     if self.init_cfg is not None:
-        #         ckpt_path = self.init_cfg['checkpoint']
-        #     elif pretrained is not None:
-        #         ckpt_path = pretrained
-        #
-        #     ckpt = _load_checkpoint(
-        #         ckpt_path, logger=logger, map_location='cpu')
-        #     if 'state_dict' in ckpt:
-        #         _state_dict = ckpt['state_dict']
-        #     elif 'model' in ckpt:
-        #         _state_dict = ckpt['model']
-        #     else:
-        #         _state_dict = ckpt
-        #
-        #     state_dict = _state_dict
-        #     missing_keys, unexpected_keys = \
-        #         self.load_state_dict(state_dict, False)
-        pass
-
     def forward_tokens(self, x):
         outs = []
         for idx, block in enumerate(self.network):
@@ -380,41 +379,41 @@ def count_parameters(model):
 
 
 import torch
+import torch.nn as nn
 from torchvision import models
 
-import torch.nn as nn
-
 class CASVIT_T_64_CLASSES(nn.Module):
-    # still being worked on
-    def __init__(self, pretrained=True):
-        super(CASVIT_T_64_CLASSES, self).__init__()
+    def __init__(self, pretrained: bool = True):
+        super().__init__()
         self.model = models.mobilenet_v3_small(pretrained=pretrained)
-        # Replace the final classification layer
-        self.model.classifier[3] = nn.Linear(self.model.classifier[3].in_features, 64)
+        self.model.classifier[3] = nn.Linear(
+            self.model.classifier[3].in_features, 64
+        )
 
     def forward(self, x):
         return self.model(x)
-    
+
 
 if __name__ == "__main__":
-    
     from training.lightning_train_function import lightning_train
     import training.lightning_model
+
     model = rcvit_t()
 
     continue_from_checkpoint = False
-    if(continue_from_checkpoint == False):
-        print("Model se trenira od nule")
-        checkpoint = torch.load('src/casvit/CASVIT_t.pth') # Izmeniti
+    if not continue_from_checkpoint:
+        checkpoint = torch.load("src/casvit/CASVIT_t.pth")  
         model.load_state_dict(checkpoint["model"])
         model.dist = False
-        model.head = nn.Linear(512, 64) # Menja classifier head da bude 64
+        model.head = nn.Linear(512, 64)  
     else:
         model.dist = False
         model.head = nn.Linear(512, 64)
-        lightningModel3 = training.lightning_model.LightningModel.load_from_checkpoint(r"C:\Users\stale\Desktop\LPCV_2025_T1\models\VIKTOR_OPTUNA_PARAMETRI\Ver1.0\VIKTOR_OPTUNA_PARAMETRI-epoch=23-train_loss=0.1525-val_loss=0.2811.ckpt", model = model)
-        model = lightningModel3.model
-        
+        lightning_model = training.lightning_model.LightningModel.load_from_checkpoint(
+            r"C:\Users\stale\Desktop\LPCV_2025_T1\models\VIKTOR_OPTUNA_PARAMETRI"
+            r"\Ver1.0\VIKTOR_OPTUNA_PARAMETRI-epoch=23-train_loss=0.1525-val_loss=0.2811.ckpt",
+            model=model,
+        )
+        model = lightning_model.model
 
-
-    lightning_train('configs/default_training_config.json', model)
+    lightning_train("configs/default_training_config.json", model)

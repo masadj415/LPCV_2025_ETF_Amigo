@@ -1,8 +1,8 @@
 #!/bin/bash -x
 
-## Skripta koja pravi virtuelno okruzenje sa pythonom 3.10
-# namenjeno za koriscenje na ubuntu operativnom sistemu
-# Python3.10 je potreban za pokretanje sveske za kvantizaciju
+## Script that creates a virtual environment with Python 3.10
+# Intended for use on Ubuntu operating system
+# Python 3.10 is required to run the quantization notebook
 
 sudo apt update
 # sudo apt install python 
@@ -18,3 +18,4 @@ source .venv3.10/bin/activate
 pip install --upgrade pip
 pip3 install torch==2.6.0 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
 pip install -r requirements.txt
+

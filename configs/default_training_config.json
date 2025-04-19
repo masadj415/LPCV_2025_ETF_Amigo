@@ -49,7 +49,7 @@
     "balance_dataset" : true,
     "balance_datasets_per_class": true,
     "label_smoothing" : 0.05,
-    "dataset_weights" : [0.77318, 0.577985, 0.68039, 0.300767],
+    "dataset_weights" : [0.6, 0.7, 0.3, 0.2],
     "use_per_class_dataset_weighthing": true,
     
     "learning_rate": 2e-6,

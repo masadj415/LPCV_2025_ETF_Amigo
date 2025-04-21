@@ -1,9 +1,6 @@
 import torch
-import torchsummary
 import os
 import sys
-import pytorch_lightning as pl
-import torch.optim as optim
 import torch.nn as nn
 
 ROOT_DIR = os.path.abspath(os.path.join(os.getcwd(), ".."))
@@ -12,7 +9,6 @@ sys.path.append(ROOT_DIR)
 ROOT_DIR = os.path.abspath(os.path.join(os.getcwd(), "../.."))
 sys.path.append(ROOT_DIR)
 
-from utils import helper, qai_hub_jobs, tfhelper
 import training
 import casvit.rcvit as rcvit
 
@@ -28,20 +24,17 @@ import training.lightning_train_function
 
 modelBase = getBaseModel()
 
+pathToLightningCheckpoint = r"finalLightningCheckpoint/FINAL_MODEL-epoch=54-train_loss=0.6094-val_loss=0.8717.ckpt"
+
 lightningModel = training.lightning_model.LightningModel.load_from_checkpoint(
-    r"finalLightningCheckpoint/FINAL_MODEL-epoch=54-train_loss=0.6094-val_loss=0.8717.ckpt",
+    pathToLightningCheckpoint,
     model=modelBase
 )
 
 model = lightningModel.model
 model.eval()
 
-from dataset import DatasetReader
-from dataset.utils import GLOBAL_CLASSES
 from torchvision import transforms
-from torch.utils.data import DataLoader
-import torchvision.ops as ops
-import torchvision.transforms.functional as F
 
 class Normalized(torch.nn.Module):
     def __init__(self, network):

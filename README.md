@@ -24,6 +24,7 @@ We adapted and fine-tuned this model to achieve high accuracy under diverse ligh
 
 - **Framework**: PyTorch + PyTorch Lightning
 - **Checkpoint**: [`FINAL_MODEL-epoch=54-train_loss=0.6094-val_loss=0.8717.ckpt`](https://drive.google.com/file/d/1u_UzRuVfSNPCHaOv33xwhqsd_gvmMHfG/view?usp=drive_link) (this is a Pytorch Lightning checkpoint)
+   - Add this checkpoint to the `root/finalLightningCheckpoint` folder
 - **Hardware setup**: The model was trained on
    - **GPU**: 1x RTX 5090 (32GB)
    - **CPU**: Ryzen 9 9950X
@@ -72,9 +73,9 @@ We adapted and fine-tuned this model to achieve high accuracy under diverse ligh
 
 To reproduce our environment and train or evaluate the model, follow these steps:
 
-1. **Create and activate virtual environment**  
+1. **Create and activate virtual environment** (tested on Python 3.12)  
    `python -m venv .venv`  
-   `source .venv/bin/activate`  &nbsp;&nbsp;*(For Windows use: `.venv\Scripts\activate`)*
+   `source .venv/bin/activate`  &nbsp;&nbsp;*(For Windows use: `.\.venv\Scripts\activate`)*
 
 2. **Install the repo in editable mode**  (this also installs the requirements.txt) 
    `pip install -e .`
@@ -91,7 +92,8 @@ To reproduce our environment and train or evaluate the model, follow these steps
 6. **For training, from the root folder run:**  
    `python src/casvit/rcvit.py`
 
-7. **To upload the model to QAI Hub, run:**
+7. **To upload the downloaded checkpoint to QAI Hub, run**
    `python src/casvit/test.py`
+   (alternatively change the `pathToLightningCheckpoint` variable in `test.py`)
 
 

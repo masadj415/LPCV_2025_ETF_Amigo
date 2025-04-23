@@ -3,6 +3,7 @@
 ## Introduction
 
 This repository contains our solution for Track 1 of the LPCV 2025 Challenge, where we secured **3rd place**.
+Our team consists of final-year bachelor students from the University of Belgrade, School of Electrical Engineering.
 ## Challenge Overview
 
 - **Competition Website**: [LPCV 2025](https://lpcv.ai/2025LPCVC/image-classification)
